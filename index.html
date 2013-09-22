@@ -4,25 +4,34 @@
     <title>Bootstrap 101 Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/rickshaw.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   </head>
   <body>
     <h1>how hot is it?</h1>
-    <script type="text/javascript">
-      var data = [ { x: 0, y: 40 }, { x: 1, y: 49 }, { x: 2, y: 17 }, { x: 3, y: 42 } ];
-
-      var graph = new Rickshaw.Graph( {
-        element: document.querySelector("#chart"),
-        width: 580,
-        height: 250,
-        series: [ {
-          color: 'steelblue',
-          data: data
-        } ]
-      } );
-
-      graph.render();
-    </script>
+    <div id="chart"></div> 
+ 
+    <script> 
+     
+    var graph = new Rickshaw.Graph( {
+        element: document.querySelector("#chart"), 
+        width: 800, 
+        height: 200, 
+        series: [{
+            color: 'steelblue',
+            data: [ 
+                { x: 0, y: 40 }, 
+                { x: 1, y: 49 }, 
+                { x: 2, y: 38 }, 
+                { x: 3, y: 10 }, 
+                { x: 4, y: 32 } ]
+        }]
+    });
+     
+    graph.render();
+     
+    </script> 
 
     <!-- JavaScript plugins (requires jQuery) -->
     <script src="http://code.jquery.com/jquery.js"></script>
